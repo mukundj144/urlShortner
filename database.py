@@ -16,6 +16,7 @@ class URLs:
     def fetch_url(self, special_key):
         try:
             data = self.db.find_one({"special_key": special_key})
+            self.db.update_one({"special_key":special_key},{"$inc":{"clicks":1}})
             if data:
                 return data['url']  
             else:
