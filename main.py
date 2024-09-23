@@ -16,7 +16,7 @@ url_obj = URLs(collection)
 qr_obj = qr_code()  # Instantiate qr_code object
 
 # Define base URL (for example, your local host or domain name)
-base_url = "https://mukund-urlshortner.onrender.com/"
+base_url = "http://localhost:8000/"
 
 # Pydantic model for the incoming URL data
 class AddURL(BaseModel):
