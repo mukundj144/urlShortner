@@ -6,7 +6,7 @@ from pymongo import MongoClient
 from qrcode import qr_code
 
 # MongoDB connection setup
-connection_string = "mongodb://localhost:27017"
+connection_string = "mongodb+srv://mukund14042003:mukund9ai@cluster0.j4vje.mongodb.net/"
 mongo_db = MongoClient(connection_string)
 database = mongo_db.UrlShortner
 collection = database.URLs
