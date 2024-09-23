@@ -8,7 +8,8 @@ class URLs:
         else:
             doc = {
                 "special_key": special_key,
-                "url": url
+                "url": url,
+                "clicks": clicks
             } 
             self.db.insert_one(doc)
             return True
@@ -20,6 +21,13 @@ class URLs:
             if data:
                 return data['url']  
             else:
-                return "https://google.com"
+                return "https://yahoo.com"
         except:
             return "https://google.com"
+    
+    def count(self,special_key):
+        try:
+            data = self.db.find_one({"special_key":special_key})
+            return data["clicks"]
+        except:
+            return 0
